@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Owner resource:
+  # CREATE
+  get "/owners/new", :controller => "owners", :action => "new"
+  post "/create_owner", :controller => "owners", :action => "create"
+
+  # READ
+  get "/owners", :controller => "owners", :action => "index"
+  get "/owners/:id", :controller => "owners", :action => "show"
+
+  # UPDATE
+  get "/owners/:id/edit", :controller => "owners", :action => "edit"
+  post "/update_owner/:id", :controller => "owners", :action => "update"
+
+  # DELETE
+  get "/delete_owner/:id", :controller => "owners", :action => "destroy"
+  #------------------------------
+
   # Routes for the Docking_space resource:
   # CREATE
   get "/docking_spaces/new", :controller => "docking_spaces", :action => "new"

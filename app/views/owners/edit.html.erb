@@ -1,0 +1,46 @@
+<!-- Validation failure messages -->
+<% if @owner.errors.any? %>
+  <% @owner.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Owner #<%= @owner.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_owner/<%= @owner.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for vessels_id -->
+      <div class="form-group">
+        <label for="vessels_id" class="control-label">
+          Vessels
+        </label>
+
+        <input type="text" id="vessels_id" name="vessels_id" placeholder="Vessels" class="form-control" value="<%= @owner.vessels_id %>">
+      </div>
+
+      <!-- Label and input for member_id -->
+      <div class="form-group">
+        <label for="member_id" class="control-label">
+          Member
+        </label>
+
+        <input type="text" id="member_id" name="member_id" placeholder="Member" class="form-control" value="<%= @owner.member_id %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Owner
+      </button>
+      or
+      <a href="/owners/<%= @owner.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
