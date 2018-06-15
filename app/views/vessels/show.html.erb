@@ -1,0 +1,46 @@
+<div class="page-header">
+  <h3>Vessel #<%= @vessel.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Name</dt>
+      <dd><%= @vessel.name %></dd>
+
+      <dt>Lenght</dt>
+      <dd><%= @vessel.lenght %></dd>
+
+      <dt>Brand</dt>
+      <dd><%= @vessel.brand %></dd>
+
+      <dt>Construction date</dt>
+      <dd><%= @vessel.construction_date %></dd>
+
+      <dt>Model</dt>
+      <dd><%= @vessel.model %></dd>
+
+      <dt>City</dt>
+      <dd><%= @vessel.city %></dd>
+
+      <dt>Country of origin</dt>
+      <dd><%= @vessel.country_of_origin %></dd>
+
+      <dt>Propulsion</dt>
+      <dd><%= @vessel.propulsion %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/vessels" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/vessels/<%= @vessel.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_vessel/<%= @vessel.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="page-header">
+  <h1>
+    Vessels
+    <a href="/vessels/new" class="btn btn-lg btn-success">New Vessel</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Name</th>
+        <th>Lenght</th>
+        <th>Brand</th>
+        <th>Construction date</th>
+        <th>Model</th>
+        <th>City</th>
+        <th>Country of origin</th>
+        <th>Propulsion</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @vessels.each do |vessel| %>
+      <tr>
+        <td><%= vessel.name %></td>
+        <td><%= vessel.lenght %></td>
+        <td><%= vessel.brand %></td>
+        <td><%= vessel.construction_date %></td>
+        <td><%= vessel.model %></td>
+        <td><%= vessel.city %></td>
+        <td><%= vessel.country_of_origin %></td>
+        <td><%= vessel.propulsion %></td>
+        <td>
+          <a href="/vessels/<%= vessel.id %>" class="btn btn-primary">Show</a>
+          <a href="/vessels/<%= vessel.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_vessel/<%= vessel.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

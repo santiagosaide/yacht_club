@@ -1,0 +1,100 @@
+<!-- Validation failure messages -->
+<% if @vessel.errors.any? %>
+  <% @vessel.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Vessel #<%= @vessel.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_vessel/<%= @vessel.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for name -->
+      <div class="form-group">
+        <label for="name" class="control-label">
+          Name
+        </label>
+
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @vessel.name %>">
+      </div>
+
+      <!-- Label and input for lenght -->
+      <div class="form-group">
+        <label for="lenght" class="control-label">
+          Lenght
+        </label>
+
+        <input type="text" id="lenght" name="lenght" placeholder="Lenght" class="form-control" value="<%= @vessel.lenght %>">
+      </div>
+
+      <!-- Label and input for brand -->
+      <div class="form-group">
+        <label for="brand" class="control-label">
+          Brand
+        </label>
+
+        <input type="text" id="brand" name="brand" placeholder="Brand" class="form-control" value="<%= @vessel.brand %>">
+      </div>
+
+      <!-- Label and input for construction_date -->
+      <div class="form-group">
+        <label for="construction_date" class="control-label">
+          Construction date
+        </label>
+
+        <input type="text" id="construction_date" name="construction_date" placeholder="Construction date" class="form-control" value="<%= @vessel.construction_date %>">
+      </div>
+
+      <!-- Label and input for model -->
+      <div class="form-group">
+        <label for="model" class="control-label">
+          Model
+        </label>
+
+        <input type="text" id="model" name="model" placeholder="Model" class="form-control" value="<%= @vessel.model %>">
+      </div>
+
+      <!-- Label and input for city -->
+      <div class="form-group">
+        <label for="city" class="control-label">
+          City
+        </label>
+
+        <input type="text" id="city" name="city" placeholder="City" class="form-control" value="<%= @vessel.city %>">
+      </div>
+
+      <!-- Label and input for country_of_origin -->
+      <div class="form-group">
+        <label for="country_of_origin" class="control-label">
+          Country of origin
+        </label>
+
+        <input type="text" id="country_of_origin" name="country_of_origin" placeholder="Country of origin" class="form-control" value="<%= @vessel.country_of_origin %>">
+      </div>
+
+      <!-- Label and input for propulsion -->
+      <div class="form-group">
+        <label for="propulsion" class="control-label">
+          Propulsion
+        </label>
+
+        <input type="text" id="propulsion" name="propulsion" placeholder="Propulsion" class="form-control" value="<%= @vessel.propulsion %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Vessel
+      </button>
+      or
+      <a href="/vessels/<%= @vessel.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
