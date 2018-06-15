@@ -24,7 +24,7 @@
           Vessels
         </label>
 
-        <input type="text" id="vessels_id" name="vessels_id" placeholder="Vessels" class="form-control" value="<%= @owner.vessels_id %>">
+        <%= select_tag(:vessels_id, options_from_collection_for_select(Vessel.all, :id, :name, @owner.vessels_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for member_id -->
