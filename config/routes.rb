@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "vessels#index"
   # Routes for the Family resource:
   # CREATE
   get "/families/new", :controller => "families", :action => "new"
