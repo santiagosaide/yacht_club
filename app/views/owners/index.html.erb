@@ -16,7 +16,7 @@
 
       <% @owners.each do |owner| %>
       <tr>
-        <td><%= owner.vessels_id %></td>
+        <td><%= owner.vessels.name %></td>
         <td><%= owner.member_id %></td>
         <td>
           <a href="/owners/<%= owner.id %>" class="btn btn-primary">Show</a>
