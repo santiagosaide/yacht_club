@@ -1,4 +1,14 @@
 class OwnersController < ApplicationController
+  before_action :current_member_must_be_owner_member, :only => [:edit, :update, :destroy]
+
+  def current_member_must_be_owner_member
+    owner = Owner.find(params[:id])
+
+    unless current_member == owner.member
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @owners = Owner.all
 
