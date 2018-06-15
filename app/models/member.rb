@@ -8,6 +8,10 @@ class Member < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :vessels,
+             :through => :owners,
+             :source => :vessels
+
   # Validations
 
   # Include default devise modules. Others available are:

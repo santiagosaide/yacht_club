@@ -11,6 +11,10 @@ class Vessel < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :members,
+             :through => :owners,
+             :source => :member
+
   # Validations
 
 end
