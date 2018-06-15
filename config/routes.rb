@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Family resource:
+  # CREATE
+  get "/families/new", :controller => "families", :action => "new"
+  post "/create_family", :controller => "families", :action => "create"
+
+  # READ
+  get "/families", :controller => "families", :action => "index"
+  get "/families/:id", :controller => "families", :action => "show"
+
+  # UPDATE
+  get "/families/:id/edit", :controller => "families", :action => "edit"
+  post "/update_family/:id", :controller => "families", :action => "update"
+
+  # DELETE
+  get "/delete_family/:id", :controller => "families", :action => "destroy"
+  #------------------------------
+
   # Routes for the Owner resource:
   # CREATE
   get "/owners/new", :controller => "owners", :action => "new"
