@@ -26,3 +26,65 @@
     </div>
   </div>
 </div>
+
+<!-- A Member has many owners -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Owners
+      </li>
+
+      <% @member.owners.each do |owner| %>
+        <li class="list-group-item">
+          <a href="/owners/<%= owner.id %>">
+            <%= owner.vessels_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/owners/<%= owner.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/owners/<%= owner.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_owner/<%= owner.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Member has many vessels -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Vessels
+      </li>
+
+      <% @member.vessels.each do |vessel| %>
+        <li class="list-group-item">
+          <a href="/vessels/<%= vessel.id %>">
+            <%= vessel.name %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/vessels/<%= vessel.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/vessels/<%= vessel.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_vessel/<%= vessel.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
