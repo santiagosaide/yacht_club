@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Docking_space resource:
+  # CREATE
+  get "/docking_spaces/new", :controller => "docking_spaces", :action => "new"
+  post "/create_docking_space", :controller => "docking_spaces", :action => "create"
+
+  # READ
+  get "/docking_spaces", :controller => "docking_spaces", :action => "index"
+  get "/docking_spaces/:id", :controller => "docking_spaces", :action => "show"
+
+  # UPDATE
+  get "/docking_spaces/:id/edit", :controller => "docking_spaces", :action => "edit"
+  post "/update_docking_space/:id", :controller => "docking_spaces", :action => "update"
+
+  # DELETE
+  get "/delete_docking_space/:id", :controller => "docking_spaces", :action => "destroy"
+  #------------------------------
+
   # Routes for the Vessel resource:
   # CREATE
   get "/vessels/new", :controller => "vessels", :action => "new"

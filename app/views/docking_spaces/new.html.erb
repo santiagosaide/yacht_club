@@ -1,0 +1,37 @@
+<!-- Validation failure messages -->
+<% if @docking_space.errors.any? %>
+  <% @docking_space.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Docking Space</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_docking_space" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for vessell_id -->
+      <div class="form-group">
+        <label for="vessell_id" class="control-label">
+          Vessell
+        </label>
+
+        <input type="text" id="vessell_id" name="vessell_id" placeholder="Vessell" class="form-control" value="<%= @docking_space.vessell_id %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Docking Space
+      </button>
+      or
+      <a href="/docking_spaces">Cancel</a>
+    </form>
+  </div>
+</div>

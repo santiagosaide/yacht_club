@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h1>
+    Docking spaces
+    <a href="/docking_spaces/new" class="btn btn-lg btn-success">New Docking space</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Vessell</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @docking_spaces.each do |docking_space| %>
+      <tr>
+        <td><%= docking_space.vessell_id %></td>
+        <td>
+          <a href="/docking_spaces/<%= docking_space.id %>" class="btn btn-primary">Show</a>
+          <a href="/docking_spaces/<%= docking_space.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_docking_space/<%= docking_space.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
