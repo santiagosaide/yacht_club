@@ -15,7 +15,13 @@
 
       <% @docking_spaces.each do |docking_space| %>
       <tr>
-        <td><%= docking_space.vessell.name %></td>
+        <td>
+          <% if docking_space.vessell.present? %>
+            <a href="/vessels/<%= docking_space.vessell.id %>">
+              <%= docking_space.vessell.name %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/docking_spaces/<%= docking_space.id %>" class="btn btn-primary">Show</a>
           <a href="/docking_spaces/<%= docking_space.id %>/edit" class="btn btn-warning">Edit</a>

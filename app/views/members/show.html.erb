@@ -15,7 +15,13 @@
       <dd><%= @member.name %></dd>
 
       <dt>Family</dt>
-      <dd><%= @member.family_id %></dd>
+      <dd>
+        <% if @member.family.present? %>
+          <a href="/families/<%= @member.family_id %>">
+            <%= @member.family.last_name %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 
