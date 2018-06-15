@@ -1,6 +1,6 @@
 class FamiliesController < ApplicationController
   def index
-    @families = Family.all
+    @families = Family.page(params[:page]).per(10)
 
     render("families/index.html.erb")
   end

@@ -1,6 +1,6 @@
 class DockingSpacesController < ApplicationController
   def index
-    @docking_spaces = DockingSpace.all
+    @docking_spaces = DockingSpace.page(params[:page]).per(10)
 
     render("docking_spaces/index.html.erb")
   end

@@ -1,6 +1,6 @@
 class VesselsController < ApplicationController
   def index
-    @vessels = Vessel.all
+    @vessels = Vessel.page(params[:page]).per(10)
 
     render("vessels/index.html.erb")
   end
