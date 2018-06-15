@@ -14,15 +14,6 @@
       <dt>Name</dt>
       <dd><%= @member.name %></dd>
 
-      <dt>Family</dt>
-      <dd>
-        <% if @member.family.present? %>
-          <a href="/families/<%= @member.family_id %>">
-            <%= @member.family.last_name %>
-          </a>
-        <% end %>
-      </dd>
-
     </dl>
 
     <div class="btn-group btn-group-justified">

@@ -35,7 +35,6 @@ class DeviseCreateMembers < ActiveRecord::Migration[5.0]
       t.string :email
       t.string :password
       t.string :name
-      t.integer :family_id
 
       t.timestamps null: false
     end
