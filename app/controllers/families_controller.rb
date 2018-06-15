@@ -1,6 +1,7 @@
 class FamiliesController < ApplicationController
   def index
-    @families = Family.page(params[:page]).per(10)
+    @q = Family.ransack(params[:q])
+    @families = @q.result(:distinct => true).includes(:members).page(params[:page]).per(10)
 
     render("families/index.html.erb")
   end

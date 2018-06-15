@@ -10,7 +10,8 @@ class OwnersController < ApplicationController
   end
 
   def index
-    @owners = Owner.page(params[:page]).per(10)
+    @q = Owner.ransack(params[:q])
+    @owners = @q.result(:distinct => true).includes(:member, :vessels).page(params[:page]).per(10)
 
     render("owners/index.html.erb")
   end
