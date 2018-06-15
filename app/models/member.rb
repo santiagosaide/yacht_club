@@ -1,6 +1,8 @@
 class Member < ApplicationRecord
   # Direct associations
 
+  belongs_to :family
+
   has_many   :owners,
              :dependent => :destroy
 
