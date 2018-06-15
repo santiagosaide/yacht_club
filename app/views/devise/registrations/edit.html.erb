@@ -64,7 +64,7 @@
           <div class="form-group">
             <%= f.label :family_id, class: "col-sm-2 control-label" %>
             <div class="col-sm-10">
-              <%= f.select(:family_id, options_from_collection_for_select(Family.all, :id, :last_name, @member.family_id), {}, {:class => "form-control"}) %>
+              <%= f.number_field :family_id, :class => "form-control", :placeholder => "Enter family id" %>
             </div>
           </div>
 
