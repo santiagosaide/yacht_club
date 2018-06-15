@@ -72,6 +72,29 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_owner" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for vessels_id -->
+      <div class="form-group">
+        <label for="vessels_id" class="control-label">
+          Vessels
+        </label>
+
+        <%= select_tag(:vessels_id, options_from_collection_for_select(Vessel.all, :id, :name), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for member_id -->
+      <input type="hidden" name="member_id" value="<%= current_member.id %>">
+
+      <button class="btn btn-block btn-success">
+        Create Owner
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>

@@ -6,6 +6,7 @@ class VesselsController < ApplicationController
   end
 
   def show
+    @owner = Owner.new
     @vessel = Vessel.find(params[:id])
 
     render("vessels/show.html.erb")

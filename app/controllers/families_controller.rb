@@ -6,6 +6,7 @@ class FamiliesController < ApplicationController
   end
 
   def show
+    @member = Member.new
     @family = Family.find(params[:id])
 
     render("families/show.html.erb")
