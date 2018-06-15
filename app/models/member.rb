@@ -1,6 +1,9 @@
 class Member < ApplicationRecord
   # Direct associations
 
+  has_many   :owners,
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
